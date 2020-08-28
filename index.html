@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>HTML Boilerplate</title>
+	<link rel="icon" href="http://dicson.in/static/favicon.png">
+	<meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="dicson.in">
+	<link rel="canonical" href="http://dicson.in" />
+	<link rel="stylesheet" href="style/main.css">
+</head>
+
+<body>
+	<div class="container">
+	<h1>text shadow to stroke</h1>
+	
+	<div id="result" class="result usn">Sample Text
+		<textarea id="resultField" class="resultField">Sample Text</textarea>
+	</div>
+	<div class="inputField usn">
+		<h5>Font Size</h5>
+		<input type="number" id="fontSize" class="fontSize" maxlength="2" value="45" min="25" max="70"><span>px</span>
+		<i></i>
+		<h5>Stroke Width</h5>
+		<input type="text" id="inputCunt" class="inputCunt" maxlength="1"><span>1 - 9</span>
+		<i></i>
+		<h5>Stroke Color</h5>
+		<input type="color" id="html5colorpicker" class="color" onchange="html5colorpicker()">
+		<i></i>
+		<h5>Custom Color</h5>
+		<input type="text" id="customClr" class="customClr" maxlength="7"></input>
+	</div>
+	<div class="resultCnt">
+		<h2 id="vlaueNo" class="hide"></h2>
+			<div id="resultAction" class="resultAction">
+				<div class="scroll">
+					<h3 id="shdwR"></h3>
+				</div>
+				<i></i>
+				<a id="cpyBtn" class="btn usn" onclick="copyToClipboard();">Copy</a>
+				<div id="copied" class="copied">Text copied Successfully!</div>
+			</div>
+		</div>
+	</div>
+	  
+	<script src="js/index.js"></script>
+</body>
+
+</html>

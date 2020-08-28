@@ -1,0 +1,186 @@
+@import url(https://fonts.googleapis.com/css?family=Alfa+Slab+One);
+
+::-webkit-scrollbar {
+	width: 5px;
+  background-color: rgba(0, 0, 0, 0.06);
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, 0.27);
+  width: 5px;
+}
+*{margin: 0;padding: 0;box-sizing: border-box;}
+html {background-color: #19ABAB;background-color: #4C8BDA;background-color: #36B2C1}
+body { font-family : Arial; }
+input { font-family : Arial; }
+input:focus { outline: none; }
+.usn{ user-select:  none;-webkit-user-select: none;-moz-user-select: none; }
+.container {
+  margin: 0 auto;
+  padding: 50px 20px;
+  width: 920px;
+}
+i {
+    display: block;
+    margin: 15px 0px 12px 0;
+    height: 2px;
+    background-color: #000;
+    border-bottom: 1px solid #fff;
+    opacity: 0.3;
+}
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #fff;
+}
+.result { 
+  text-align: center;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-family: 'Alfa Slab One', cursive;
+  font-weight: normal;
+  letter-spacing: 24px;
+  font-size: 45px;
+  margin-bottom: 30px;
+  height: 150px;
+  background-color: rgba(255, 255, 255, 0.63);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  line-height: 150px;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.29);
+  overflow: hidden;
+}
+.resultField {
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 0;
+  top: -50px;
+}
+.hide, .resultAction {
+  display: none;
+}
+.inputField {
+  width: 240px;
+  float: left;
+  h5 {
+    font-size: 23px;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.28);
+  }
+  .inputCunt {
+    border: none;
+    width: 70px;
+    height: 40px;
+    border-radius: 8px;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 27px;
+    margin-right: 10px;
+    background-color: rgba(10, 10, 10, 0.28);
+  }
+  span {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .fontSize {
+    border: none;
+    width: 100px;
+    height: 40px;
+    border-radius: 8px;
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 27px;
+    margin-right: 10px;
+    background-color: rgba(10, 10, 10, 0.28);
+  }
+}
+.resultCnt {
+  position: relative;
+  float: right;
+  width: 68%;
+  background-color: rgba(255, 255, 255, 0.63);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.29);
+  padding: 25px;
+  h3 {
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 23px;
+    padding-right: 10px;
+    clear: both;
+    width: 100%;
+  }
+  h5 {
+    font-size: 23px;
+    text-align: center;
+    color: #EA0A0A;
+    text-shadow: 1px 1px 0px #fff;
+  }
+  i {
+    margin: 15px 0px 15px 0px;
+  }
+  .btn {
+        cursor: pointer;
+    float: right;
+    background-color: #FFC53C;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    padding: 11px 70px;
+    border-radius: 5px;
+    color: #2B2B2B;
+    text-shadow: 1px 1px 0px #fff;
+    box-shadow: 3px 3px 0px 0px rgb(146, 105, 10);
+    transition: all 0.25s;
+    transform: translate(0px, 0px);
+    &:hover {
+      background-color: #E8B12D;
+    }
+    &:active {
+      text-shadow: 0px 0px 0px #fff;
+      box-shadow: 0px 0px 0px 0px rgb(146, 105, 10);
+      transform: translate(2px, 2px);
+    }
+  }
+}
+.scroll {
+  max-height: 28vh;
+  overflow: auto;
+}
+.copied {
+  display: none;
+  position: absolute;
+  left: 25px;
+  bottom: 36px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #176B29;
+}
+.color {
+  border: none;
+  background-color: rgba(10, 10, 10, 0.28);
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 17px;
+  height: 35px;
+  width: 100%;
+}
+.customClr {
+    background-color: rgba(10, 10, 10, 0.28);
+    border: none;
+    width: 115px;
+    padding: 0px 20px;
+    height: 35px;
+    border-radius: 18px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 15px;
+}
