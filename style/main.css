@@ -1,4 +1,21 @@
 
+.github {
+  position: fixed;
+  right: -44px;
+  top: -15px;
+  width: 130px;
+  height: 70px;
+  z-index: 9;
+  transform: rotate(45deg);
+}
+.github:after {
+  background: #f7f7f7 url(../img/github-logo.png) no-repeat center 82%;
+  background-size: 38% auto;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 ::-webkit-scrollbar {
   width: 5px;
   background-color: rgba(0, 0, 0, 0.06);
