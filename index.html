@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>HTML Boilerplate</title>
+	<title>Text Shadow to Stroke</title>
 	<link rel="icon" href="http://dicson.in/static/favicon.png">
 	<meta
       name="viewport"
@@ -18,37 +18,38 @@
 
 <body>
 	<div class="container">
-	<h1>text shadow to stroke</h1>
+		<h1>text shadow to stroke</h1>
 	
-	<div id="result" class="result usn">Sample Text
-		<textarea id="resultField" class="resultField">Sample Text</textarea>
-	</div>
-	<div class="inputField usn">
-		<h5>Font Size</h5>
-		<input type="number" id="fontSize" class="fontSize" maxlength="2" value="45" min="25" max="70"><span>px</span>
-		<i></i>
-		<h5>Stroke Width</h5>
-		<input type="text" id="inputCunt" class="inputCunt" maxlength="1"><span>1 - 9</span>
-		<i></i>
-		<h5>Stroke Color</h5>
-		<input type="color" id="html5colorpicker" class="color" onchange="html5colorpicker()">
-		<i></i>
-		<h5>Custom Color</h5>
-		<input type="text" id="customClr" class="customClr" maxlength="7"></input>
-	</div>
-	<div class="resultCnt">
-		<h2 id="vlaueNo" class="hide"></h2>
-			<div id="resultAction" class="resultAction">
-				<div class="scroll">
-					<h3 id="shdwR"></h3>
-				</div>
+		<div id="result" class="result">SHADOW HERE
+			<textarea id="resultField" class="resultField">Sample Text</textarea>
+		</div>
+		<div class="flex">
+			<div class="inputField">
+				<h5>Font Size</h5>
+				<input type="range" min="15" max="70" value="50" class="slider" id="fontSize"> <span id="initFont">50</span>px
 				<i></i>
-				<a id="cpyBtn" class="btn usn" onclick="copyToClipboard();">Copy</a>
-				<div id="copied" class="copied">Text copied Successfully!</div>
+				<h5>Stroke Width</h5>
+				<input type="range" min="1" max="15" value="2" class="slider" id="strokeWidth"> <span id="initStrokeWidth">2</span>px
+				<i></i>
+				<h5>Stroke Color</h5>
+				<div class="color"><span>#</span><input class="input" id="customColor" type="text" /> <input type="color" id="colorPicker" class="picker" /></div>
+				<!-- <input type="color" id="html5colorpicker" class="color"> -->
+				<!-- <i></i>
+				<h5>Custom Color</h5>
+				<input type="text" id="customClr" class="customClr" maxlength="7"></input> -->
+			</div>
+			<div class="resultCnt">
+				<div id="resultAction" class="resultAction">
+					<div id="copyWrap" class="scroll">
+						<span style="color:brown;display: block;">.shadow <span class="cssdelimitercolor" style="color:black">{</span><span style="color:red"><br>&nbsp;&nbsp;font-size<span style="color:#282829"><span style="color:black">:</span> <span style="width: 425px;display: inline-block;vertical-align: top;"><span id="cssfontSize">49</span>px<span style="color:black">;</span></span></span><br>&nbsp;&nbsp;text-shadow<span style="color:#282829"><span style="color:black">:</span> <span style="width: 425px;display: inline-block;vertical-align: top;"><span id="strokeCss"></span><span style="color:black">;</span></span></span><br></span><span style="color:black">}</span></span>
+					</div>
+					<i></i>
+					<a id="copyBtn" class="btn">Copy</a>
+					<div id="copied" class="copied">Text copied Successfully!</div>
+				</div>
 			</div>
 		</div>
 	</div>
-	  
 	<script src="js/index.js"></script>
 </body>
 

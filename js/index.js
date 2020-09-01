@@ -1,136 +1,101 @@
-// js code
-function init() {
-}
-	 // Set initial Variables
-var rID = document.getElementById("result"),
-	inp = document.getElementById("inputCunt"),
-	shdwR = document.getElementById("shdwR"),
+// Set initial Variables
+var fontSize = document.getElementById("fontSize"),
+	strokeWidth = document.getElementById("strokeWidth"),
+	initFont = document.getElementById('initFont'),
+	initStrokeWidth = document.getElementById('initStrokeWidth'),
+	cssfontSize = document.getElementById('cssfontSize'),
+	initColor = "ff0000",
+	rID = document.getElementById("result"),
+	strokeCss = document.getElementById("strokeCss"),
 	rAct = document.getElementById("resultAction"),
-	clr = document.getElementById("html5colorpicker"),
-	ctmC = document.getElementById("customClr"),
-	sclr = "#ff0000",
-	cp = document.getElementById("copied"),
-	vnID = document.getElementById("vlaueNo");
+	colorPicker = document.getElementById("colorPicker"),
+	customColor = document.getElementById("customColor"),
+	resultField = document.getElementById('resultField'),
+	copyBtn = document.getElementById("copyBtn"),
+	copied = document.getElementById("copied");
 
-clr.value = sclr;
-ctmC.value = sclr;
-// focus the input field after page loading
-//inp.focus();
+function init() {
+	initFont.innerHTML = fontSize.value;
+	cssfontSize.innerHTML = fontSize.value;
+	initStrokeWidth.innerHTML = strokeWidth.value;
+	colorPicker.value = '#'+initColor;
+	customColor.value = initColor;
+	funStroke();
+
+	
+	strokeWidth.addEventListener('input', funStroke);
+	fontSize.addEventListener('input', funFontSize);
+	customColor.addEventListener('input', funCustomColor);
+	colorPicker.addEventListener('input', funColorPicker);
+	copyBtn.addEventListener("click", copyHandler);
+}
 
 // Clipboard copy data
-function html5colorpicker() {
-sclr = clr.value.toString();
-inp.onkeyup();
-ctmC.value = sclr;
-//console.log(clr.value);
+const funColorPicker = function(e) {
+	initColor = '#'+colorPicker.value;
+	customColor.value = e.target.value.slice(1);
+	funStroke();
 }
 
 // Custom Color Select
-ctmC.onkeyup = function() { 
-
-sclr = this.value.toString();
-clr.value = sclr;
-inp.onkeyup();
-//console.log('type');
-};
-
-ctmC.onkeydown = function(cc) {
-/*
-var ccc = (cc.which) ? cc.which : cc.keyCode;
-if (ccc != 46 && ccc > 31 && (ccc < 96 || ccc > 106) && (ccc < 48 || ccc > 57))
- return false;
-
-return true;
-*/
-};
-
-//  keyCode Restricting
-inp.onkeydown = function(evt) {
-
-var charCode = (evt.which) ? evt.which : evt.keyCode;
-if (charCode != 46 && charCode > 31 && (charCode < 97 || charCode > 105) && (charCode < 49 || charCode > 57))
-		 return false;
-
-return true; 
-
-};
-
-inp.onkeyup= function() {
-
-// Set Variables
-var cV = this.value,
-  vlaueNo = 2*cV + 1,
-  sdwC = vlaueNo * vlaueNo,
-  instV = '',
-  eArray = [];
-
-
-// Get Multi type Combination
-for(var i=-Math.abs(cV); i <= cV; i++) { 
-for( var j=-Math.abs(cV); j <= cV; j++ ) {
- instV = i + "px " + j + "px 0px " + sclr;
- eArray.push(instV);
- eArray.toString();
-}
+const funCustomColor = function(e) {
+	initColor = e.target.value;
+	colorPicker.value = '#'+initColor;
+	funStroke();
 }
 
-rID.style.textShadow = eArray;
+const funStroke = function(e) {
+	var cV = strokeWidth.value,
+	instV = '',
+	eArray = [];
 
-vnID.innerHTML = "Value = " + vlaueNo + ", Shdw Cunt = " + sdwC;
-shdwR.innerHTML = eArray;
+	initStrokeWidth.innerHTML = cV;
 
-rAct.style.display = "block";
+	// Get Multi type Combination
+	for(var i=-Math.abs(cV); i <= cV; i++) { 
+		for( var j=-Math.abs(cV); j <= cV; j++ ) {
+			instV = i + "px " + j + "px 0px #"+customColor.value;
+			eArray.push(instV);
+			eArray.toString();
+		}
+	}
 
-// Value is empty or 0
-if ( cV = "" || cV == 0 ) {
-//console.log('I am Empty');
-//vlaueNo = null;
-//sdwC    = null;
-cV      = null;
-eArray = "";
-//vnID.innerHTML = "";
-//shdwR.innerHTML = "";
+	rID.style.textShadow = eArray;
 
-rID.style.textShadow = "";
-rAct.style.display = "none";
+	strokeCss.innerHTML = eArray;
+
+	rAct.style.display = "block";
+
+	// Value is empty or 0
+	if ( cV = "" || cV == 0 ) {
+		cV      = null;
+		eArray = "";
+
+		rID.style.textShadow = "";
+		rAct.style.display = "none";
+	}
 }
-};
 
-
-function copyToClipboard() {
-var st = shdwR.innerText;
-//window.clipboardData.setData(st);
-//var seltext = window.getSelection(); 
-//console.log('cliked', st);
+const funFontSize = function() {
+	rID.style.fontSize = fontSize.value + "px";
+	initFont.innerHTML = fontSize.value;
+	cssfontSize.innerHTML = fontSize.value;
 }
 
 
-var btn = document.getElementById("cpyBtn");
-btn.addEventListener("click", clickHandler, false);
 
-function clickHandler(e) {
-var ta = document.getElementsByTagName('textarea')[0];
-ta.value = shdwR.innerText;
-ta.select();
-document.execCommand('copy');
+const copyHandler = function() {
+	resultField.value = document.getElementById('copyWrap').innerText;
+	resultField.select();
+	document.execCommand('copy');
 
-cp.style.display = 'block';
-setTimeout(function(){
-cp.style.display = 'none';
-}, 1000);
+	copied.style.display = 'block';
+	setTimeout(function(){
+		copied.style.display = 'none';
+	}, 1000);
 
 }
 
-
-var fs = document.getElementById("fontSize");
-fs.onchange =  function() {
-cs = parseInt(fs.value);
-rID.style.fontSize = cs + "px";
-//console.log('ok', cs);
-}
-fs.onkeyup = function() {
-fs.onchange();
-}
 
 
 window.addEventListener('DOMContentLoaded', function(e) {
