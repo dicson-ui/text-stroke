@@ -61,9 +61,7 @@ const funStroke = function(e) {
 	}
 
 	rID.style.textShadow = eArray;
-
 	strokeCss.innerHTML = eArray;
-
 	rAct.style.display = "block";
 
 	// Value is empty or 0
