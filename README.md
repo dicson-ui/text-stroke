@@ -1,7 +1,7 @@
 # Text Stroke
 Text Shadow to Stroke onlline coverter using JavaScript [Demo Here](http://dicson.in/widget/text-stroke)
 
-This Supporting all major Broswer and IE also.
+This is supporting all major broswer and IE also.
 
 **Screenshot**
 ![](img/text-stroke.gif)
