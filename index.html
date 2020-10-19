@@ -34,37 +34,54 @@
 	<a class="dicson" href="http://dicson.in"></a>
 	<a class="github" href="https://github.com/dicson-ui/text-stroke" ></a>
 	<div class="container">
-		<h1>text shadow to stroke</h1>
+		<div class="container-wrap">
+			<h1>text shadow <br/>to stroke</h1>
 	
-		<div id="result" class="result">SHADOW HERE
-			<textarea id="resultField" class="resultField">Sample Text</textarea>
-		</div>
-		<div class="flex">
-			<div class="inputField">
-				<h5>Font Size</h5>
-				<input type="range" min="15" max="70" value="60" class="slider" id="fontSize"> <span id="initFont">60</span>px
-				<i></i>
-				<h5>Stroke Width</h5>
-				<input type="range" min="1" max="15" value="1" class="slider" id="strokeWidth"> <span id="initStrokeWidth">1</span>px
-				<i></i>
-				<h5>Stroke Color</h5>
-				<div class="color"><span>#</span><input class="input" id="customColor" type="text" /> <input type="color" id="colorPicker" class="picker" /></div>
+			<div id="result" class="result">
+				<div class="text">SHADOW HERE</div>
+				<textarea id="resultField" class="resultField">Sample Text</textarea>
 			</div>
-			<div class="resultCnt">
-				<div id="resultAction" class="resultAction">
-					<div id="copyWrap" class="scroll">
-						<span style="color:brown;display: block;">.shadow <span class="cssdelimitercolor" style="color:black">{</span><span style="color:red"><br>&nbsp;&nbsp;font-size<span style="color:#282829"><span style="color:black">:</span> <span style="width: 425px;display: inline-block;vertical-align: top;"><span id="cssfontSize">49</span>px<span style="color:black">;</span></span></span><br>&nbsp;&nbsp;text-shadow<span style="color:#282829"><span style="color:black">:</span> <span style="width: 425px;display: inline-block;vertical-align: top;"><span id="strokeCss"></span><span style="color:black">;</span></span></span><br></span><span style="color:black">}</span></span>
-					</div>
+			<div class="flex">
+				<div class="inputField">
+					<h5>Font Size</h5>
+					<input type="range" min="15" max="70" value="60" class="slider" id="fontSize"> <span id="initFont">60</span>px
 					<i></i>
-					<a id="copyBtn" class="btn">Copy</a>
-					<div id="copied" class="copied">Text copied Successfully!</div>
+					<h5>Stroke Width</h5>
+					<input type="range" min="1" max="15" value="1" class="slider" id="strokeWidth"> <span id="initStrokeWidth">1</span>px
+					<i></i>
+					<h5>Stroke Color</h5>
+					<div class="color"><span>#</span><input class="input" id="customColor" type="text" /> <input type="color" id="colorPicker" class="picker" /></div>
+				</div>
+				<div class="resultCnt">
+					<div id="resultAction" class="resultAction">
+						<div id="copyWrap" class="scroll">
+							<span style="color:brown;display: block;">.shadow <span class="cssdelimitercolor" style="color:black">{</span>
+								<span style="display: flex;width: 100%;">
+									<span style="color:red;white-space: nowrap;">&nbsp;&nbsp;font-size</span><span style="color:black;">:</span><span style="flex-grow: 1;color:#282829;">&nbsp;<span id="cssfontSize">60</span>px<span style="color:black">;</span></span>
+								</span>
+								<span style="display: flex;width: 100%;">
+									<span style="color:red;white-space: nowrap;">&nbsp;&nbsp;text-shadow</span>
+									<span style="color:black;flex-grow: 0;">:</span> 
+									<span style="flex-grow: 1;color:#282829;">
+										&nbsp;<span id="strokeCss"></span><span style="color:black">;</span>
+									</span>
+								</span>
+								<span style="color:black">}</span>
+							</span>
+						</div>
+						<i></i>
+						<div class="action">
+							<a id="copyBtn" class="btn">Copy</a>
+						</div>
+					</div>
 				</div>
 			</div>
+			<footer>
+				Developed by <a target="_blank" href="http://dicson.in/">@dicson</a>
+			</footer>
 		</div>
-		<footer>
-			Developed by <a target="_blank" href="http://dicson.in/">@dicson</a>
-		</footer>
 	</div>
+	<div id="copied" class="copied">Text copied Successfully!</div>
 	<script src="js/index.js"></script>
 </body>
 

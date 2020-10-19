@@ -90,7 +90,7 @@ const copyHandler = function() {
 	copied.style.display = 'block';
 	setTimeout(function(){
 		copied.style.display = 'none';
-	}, 1000);
+	}, 1300);
 
 }
 
